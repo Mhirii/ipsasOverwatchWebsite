@@ -60,7 +60,12 @@
 			>
 				<a>HEROES</a>
 			</div>
-			<div class="sidebar-comp">
+			<div
+				class="sidebar-comp"
+				data-scroll="section4"
+				onclick="scrollto(this);
+			toggleMenu();"
+			>
 				<a>NEWS</a>
 			</div>
 			<div
@@ -262,24 +267,25 @@
 				</div>
 			</section>
 
-			<section>
-				<div id="section2">
-					<div>
-						<h2 class="headtext-1">A NEW ERA HAS BEGUN</h2>
-						<p class="text-display2">
-							Overwatch 2 is a free-to-play, team-based
-							action game set in the optimistic future,
-							where every match is the ultimate 5v5
-							battlefield brawl. Play as a time-jumping
-							freedom fighter, a beat-dropping battlefield
-							DJ, or one of over 30 other unique heroes as
-							you battle it out around the globe.
-						</p>
-					</div>
-					<img src="img/genji vs hanzo.png" alt="" />
+			<section id="section2">
+				<div>
+					<h2 class="headtext-1">A NEW ERA HAS BEGUN</h2>
+					<p class="text-display2">
+						Overwatch 2 is a free-to-play, team-based action
+						game set in the optimistic future, where every
+						match is the ultimate 5v5 battlefield brawl.
+						Play as a time-jumping freedom fighter, a
+						beat-dropping battlefield DJ, or one of over 30
+						other unique heroes as you battle it out around
+						the globe.
+					</p>
 				</div>
+				<img src="img/genji vs hanzo.png" alt="" />
 			</section>
 
+			<!-- <div class="sep" id="sec2-3"></div> -->
+
+			<!-- SECTION3 // HEROES -->
 			<section id="section3">
 				<h2 class="headtext-1">HEROES</h2>
 				<div id="role-name">
@@ -349,23 +355,230 @@
 					</div>
 				</div>
 			</section>
+
 			<!-- SECTION4 // NEWS -->
-			<!-- <section id="section4">
-				<div class="news-box">
-					<img
-						class="news-img"
-						src="img/news1.png"
-						alt="news1"
-					/>
-					<div class="news-text">
-						<p class="news-desc">
-							Overwatch 2 developer blog: Season 1 updates
-							with new executive producer, Jared Neuss
-						</p>
-						<p class="news-date">Nov 17</p>
+			<section id="section4">
+				<h2 class="headtext-1">NEWS</h2>
+				<div id="section4-newsboxes">
+					<div
+						class="news-box"
+						id="news1"
+						onclick="newsDetails(this);"
+					>
+						<div class="news-img">
+							<img
+								slot="image"
+								src="img/news-2.png"
+								alt=""
+							/>
+						</div>
+						<h4
+							class="news-desc text-display3"
+							slot="heading"
+						>
+							DECONSTRUCTING THE CYBER DEMON GENJI MYTHIC
+							SKIN WITH THE OVERWATCH TEAM
+						</h4>
+						<div class="news-date">Nov 9</div>
+					</div>
+					<!-- <div
+						class="news-box"
+						id="news1"
+						onclick="newsDetails(this);boxActive = false;"
+					>
+						<div class="news-img">
+							<img
+								slot="image"
+								src="img/news-2.png"
+								alt=""
+							/>
+						</div>
+						<h4
+							class="news-desc text-display3"
+							slot="heading"
+						>
+							DECONSTRUCTING THE CYBER DEMON GENJI MYTHIC
+							SKIN WITH THE OVERWATCH TEAM
+						</h4>
+						<div class="news-date">Nov 9</div>
+						<div class="news-details">
+							Lorem ipsum dolor sit amet consectetur
+							adipisicing elit. Ducimus necessitatibus enim
+							sapiente hic maiores corporis alias et harum
+							cupiditate, sit, officia quae! Itaque
+							asperiores reiciendis tenetur inventore
+							mollitia similique suscipit!
+						</div>
+						<div class="btns">
+							<button
+								class="back-btn btn"
+								onclick="boxActive = false"
+							>
+								<h2>BACK</h2>
+							</button>
+							<button class="readmore-btn btn">
+								<h2>FULL ARTICLE</h2>
+							</button>
+						</div>
+
+						<div class="return-btn">
+							<i class="fa-solid fa-chevron-left"></i>
+						</div>
+					</div> -->
+					<div
+						class="news-box"
+						id="#news2"
+						onclick="newsDetails(this)"
+					>
+						<div class="news-img">
+							<img
+								slot="image"
+								src="img/news-3.png"
+								alt=""
+							/>
+						</div>
+						<h4
+							class="news-desc text-display3"
+							slot="heading"
+						>
+							RAMATTRA REVEAL - OVERWATCH LEAGUE GRAND
+							FINALS
+						</h4>
+						<div class="news-date">Nov 5</div>
+					</div>
+					<div
+						class="news-box"
+						id="#news3"
+						onclick="newsDetails(this)"
+					>
+						<div class="news-img">
+							<img
+								slot="image"
+								src="img/news-4.png"
+								alt=""
+							/>
+						</div>
+						<h4
+							class="news-desc text-display3"
+							slot="heading"
+						>
+							FOLLOW US INTO THE SHADOWS—OVERWATCH 2
+							HALLOWEEN TERROR IS BACK!
+						</h4>
+						<div class="news-date">Oct 24</div>
+					</div>
+					<div
+						class="news-box"
+						id="#news4"
+						onclick="newsDetails(this)"
+					>
+						<div class="news-img">
+							<img
+								slot="image"
+								src="img/news-5.png"
+								alt=""
+							/>
+						</div>
+						<h4
+							class="news-desc text-display3"
+							slot="heading"
+						>
+							HALLOWEEN TERROR: FROM THE DESK OF THE LORD OF
+							ADLERSBRUNN
+						</h4>
+						<div class="news-date">Oct 20</div>
 					</div>
 				</div>
-			</section> -->
+				<div id="section4-newsboxes-active" hidden>
+					<div
+						class="news-box-active"
+						id="news1"
+						onclick="newsDetails(this);"
+					>
+						<div class="news-img">
+							<img
+								slot="image"
+								src="img/news-2.png"
+								alt=""
+							/>
+						</div>
+						<h4
+							class="news-desc text-display3"
+							slot="heading"
+						>
+							DECONSTRUCTING THE CYBER DEMON GENJI MYTHIC
+							SKIN WITH THE OVERWATCH TEAM
+						</h4>
+						<div class="news-date">Nov 9</div>
+					</div>
+					<div
+						class="news-box-inactive"
+						id="#news2"
+						onclick="newsDetails(this)"
+					>
+						<div class="news-img">
+							<img
+								slot="image"
+								src="img/news-3.png"
+								alt=""
+							/>
+						</div>
+						<h4
+							class="news-desc text-display3"
+							slot="heading"
+						>
+							RAMATTRA REVEAL - OVERWATCH LEAGUE GRAND
+							FINALS
+						</h4>
+						<div class="news-date">Nov 5</div>
+					</div>
+					<div
+						class="news-box-inactive"
+						id="#news3"
+						onclick="newsDetails(this)"
+					>
+						<div class="news-img">
+							<img
+								slot="image"
+								src="img/news-4.png"
+								alt=""
+							/>
+						</div>
+						<h4
+							class="news-desc text-display3"
+							slot="heading"
+						>
+							FOLLOW US INTO THE SHADOWS—OVERWATCH 2
+							HALLOWEEN TERROR IS BACK!
+						</h4>
+						<div class="news-date">Oct 24</div>
+					</div>
+					<div
+						class="news-box-inactive"
+						id="#news4"
+						onclick="newsDetails(this)"
+					>
+						<div class="news-img">
+							<img
+								slot="image"
+								src="img/news-5.png"
+								alt=""
+							/>
+						</div>
+						<h4
+							class="news-desc text-display3"
+							slot="heading"
+						>
+							HALLOWEEN TERROR: FROM THE DESK OF THE LORD OF
+							ADLERSBRUNN
+						</h4>
+						<div class="news-date">Oct 20</div>
+					</div>
+				</div>
+				<button class="btn">
+					<h2>VIEW ALL</h2>
+				</button>
+			</section>
 		</div>
 		<!-- #endregion CONTENT-->
 

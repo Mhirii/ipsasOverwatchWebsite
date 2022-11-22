@@ -79,4 +79,16 @@ function scrollto(element) {
   document.getElementById(element.getAttribute("data-scroll")).scrollIntoView();
 }
 
+var boxActive = false;
 
+function newsDetails(elm){
+  if (boxActive == false){
+    elm.classList.toggle("news-box")
+    elm.classList.toggle("news-box-active")
+    boxActive = true
+  }
+  else{
+    console.log('box is active')
+  }
+  boxActive = true
+}
