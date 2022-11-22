@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>PROJECT</title>
+		<meta name="description" content="" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1"
+		/>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body class="dark-mode">
+		<div class="br1"></div>
+		<!-- #region TOPBAR-->
+		<div id="topbar">
+			<div
+				class="topbar-comp"
+				id="menu-btn"
+				onclick="toggleMenu()"
+			>
+				<i class="fa-solid fa-bars" id="menu-btn-icon"></i>
+			</div>
+			<div class="topbar-comp">
+				<img
+					src="img/ow-logo-light.png"
+					alt=""
+					style="width: 32px"
+				/>
+			</div>
+			<div
+				class="topbar-comp"
+				id="acc-btn"
+				onclick="toggleAccbar()"
+			>
+				<i class="fa-solid fa-user"></i>
+			</div>
+		</div>
+		<!-- #endregion TOPBAR-->
+
+		<!-- #region SIDEBAR-->
+		<nav id="sidebar" class="sidebar-off popup">
+			<div class="sidebar-image">
+				<img src="img/ow-textlogo-white.png" alt="" />
+			</div>
+			<div
+				class="sidebar-comp"
+				data-scroll="section2"
+				onclick="scrollto(this);
+			toggleMenu();"
+			>
+				<a>GAME INFO</a>
+			</div>
+			<div
+				class="sidebar-comp"
+				data-scroll="section3"
+				onclick="scrollto(this);
+			toggleMenu();"
+			>
+				<a>HEROES</a>
+			</div>
+			<div class="sidebar-comp">
+				<a>NEWS</a>
+			</div>
+			<div
+				class="sidebar-comp"
+				data-scroll="footer"
+				onclick="scrollto(this);
+			toggleMenu();"
+			>
+				<a>MORE INFO</a>
+			</div>
+		</nav>
+		<nav id="acc-sidebar" class="acc-sidebar-off popup">
+			<div
+				class="sidebar-comp"
+				onmouseenter="toggleClass('Theme-icon', 'fa-spin')"
+				onmouseleave="toggleClass('Theme-icon', 'fa-spin')"
+			>
+				<i
+					class="fa-solid fa-circle-half-stroke"
+					id="Theme-icon"
+				></i>
+				<p>THEME</p>
+			</div>
+			<div
+				class="sidebar-comp"
+				onmouseenter="toggleClass('settings-icon', 'fa-spin')"
+				onmouseleave="toggleClass('settings-icon', 'fa-spin')"
+			>
+				<i class="fa-solid fa-cog" id="settings-icon"></i>
+				<p>SETTINGS</p>
+			</div>
+			<div
+				class="sidebar-comp"
+				onmouseenter="toggleClass('signup-icon', 'fa-shake')"
+				onmouseleave="toggleClass('signup-icon', 'fa-shake')"
+				onclick="toggleAuthScreen();toggleAccbar();"
+			>
+				<i
+					class="fa-solid fa-right-to-bracket"
+					id="signup-icon"
+				></i>
+				<p>SIGN UP</p>
+			</div>
+		</nav>
+		<!-- #endregion SIDEBAR-->
+
+		<!-- #region auth screen-->
+		<div id="auth-screen" style="display: none">
+			<button id="close-X" onclick="toggleAuthScreen()">
+				<i class="fa-solid fa-xmark"></i>
+			</button>
+			<div id="left-tab">
+				<br />
+				<br />
+				<img
+					id="signup-logo"
+					src="img/ow-logo-light.png"
+					alt="overwatch"
+				/>
+				<br />
+				<br />
+			</div>
+			<div id="signup-screen">
+				<form action="" id="signup-form">
+					<fieldset>
+						<h2>Get Started</h2>
+						<br />
+						<br />
+						<div class="input-box" id="usr-box">
+							<i
+								class="input-icon fa-solid fa-user"
+								id="usr-icon"
+							></i>
+							<input
+								type="text"
+								id="username"
+								class="input signup-input"
+								placeholder="Username"
+								onfocus="inputFocusToggle('usr-box','usr-icon')"
+								onblur="inputFocusToggle('usr-box','usr-icon')"
+								required
+							/>
+						</div>
+						<div class="input-box" id="email-box">
+							<i
+								class="input-icon fa-solid fa-envelope"
+								id="email-icon"
+							></i>
+							<input
+								type="email"
+								id="email"
+								class="input signup-input"
+								placeholder="E-mail"
+								onfocus="inputFocusToggle('email-box','email-icon')"
+								onblur="inputFocusToggle('email-box','email-icon')"
+								required
+							/>
+						</div>
+
+						<div class="input-box" id="pwd-box">
+							<i
+								class="input-icon fa-solid fa-lock"
+								id="pwd-icon"
+							></i>
+							<input
+								type="password"
+								id="password1"
+								class="input signup-input"
+								placeholder="Password"
+								onfocus="inputFocusToggle('pwd-box','pwd-icon')"
+								onblur="inputFocusToggle('pwd-box','pwd-icon')"
+								required
+							/>
+							<i
+								class="eye fa-regular fa-eye"
+								id="pwd-hidden"
+								onclick="pwdHidden('password1','pwd-hidden','pwd-shown')"
+							></i>
+							<i
+								class="eye fa-regular fa-eye-slash"
+								id="pwd-shown"
+								onclick="pwdShown('password1','pwd-hidden','pwd-shown')"
+							></i>
+						</div>
+						<div class="input-box" id="pwd2-box">
+							<i
+								class="input-icon fa-solid fa-lock"
+								id="pwd2-icon"
+							></i>
+							<input
+								type="password"
+								id="password2"
+								class="input signup-input"
+								placeholder="Confirm Password"
+								onfocus="inputFocusToggle('pwd2-box','pwd2-icon')"
+								onblur="inputFocusToggle('pwd2-box','pwd2-icon')"
+								required
+							/>
+							<i
+								class="eye fa-regular fa-eye pwd-hidden"
+								id="pwd-hidden2"
+								onclick="pwdHidden('password2','pwd-hidden2','pwd-shown2')"
+							></i>
+							<i
+								class="eye fa-regular fa-eye-slash"
+								id="pwd-shown2"
+								onclick="pwdShown('password2','pwd-hidden2','pwd-shown2')"
+							></i>
+						</div>
+						<br />
+						<br />
+						<button
+							type="submit"
+							id="signup-submit-btn"
+							class="btn text-display1"
+						>
+							SIGN UP
+						</button>
+						<br />
+						Already have an account?
+						<a id="donthaveacc"> sign in </a>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+		<!-- #endregion -->
+
+		<!-- #region CONTENT-->
+		<div id="content">
+			<section id="section1">
+				<!-- <div class="br"></div>-->
+				<img
+					src="img/ow-2-logo-white.png"
+					alt="ow2 logo"
+					class="section-image"
+					id="ow2logo"
+				/>
+				<div class="desc">
+					<p
+						class="text-display text-shadow"
+						style="color: white"
+					>
+						A FUTURE WORTH
+					</p>
+					<p
+						class="text-display text-shadow"
+						style="color: white"
+					>
+						FIGHTING FOR
+					</p>
+				</div>
+				<div class="desc">
+					<p
+						class="text-display1 text-shadow"
+						style="color: white"
+					>
+						TEAM-BASED ACTION • FREE TO PLAY
+					</p>
+				</div>
+			</section>
+
+			<section>
+				<div id="section2">
+					<div>
+						<h2 class="headtext-1">A NEW ERA HAS BEGUN</h2>
+						<p class="text-display2">
+							Overwatch 2 is a free-to-play, team-based
+							action game set in the optimistic future,
+							where every match is the ultimate 5v5
+							battlefield brawl. Play as a time-jumping
+							freedom fighter, a beat-dropping battlefield
+							DJ, or one of over 30 other unique heroes as
+							you battle it out around the globe.
+						</p>
+					</div>
+					<img src="img/genji vs hanzo.png" alt="" />
+				</div>
+			</section>
+
+			<section id="section3">
+				<h2 class="headtext-1">HEROES</h2>
+				<div id="role-name">
+					<h4 id="current-role-name" class="text-display">
+						TANK
+					</h4>
+				</div>
+				<div id="role-buttons">
+					<button
+						class="role-btn role-active"
+						id="tank-btn"
+						onclick="toggleRole('tank')"
+					>
+						<img src="img/Tank.svg" alt="" />
+					</button>
+					<button
+						class="role-btn"
+						id="dps-btn"
+						onclick="toggleRole('dps')"
+					>
+						<img src="img/Damage.svg" alt="" />
+					</button>
+					<button
+						class="role-btn"
+						id="support-btn"
+						onclick="toggleRole('support')"
+					>
+						<img src="img/Support.svg" alt="" />
+					</button>
+				</div>
+
+				<div id="role-img">
+					<div id="tank-image" class="role-img">
+						<img src="img/hero-reinhardt.png" alt="" />
+					</div>
+					<div id="dps-image" class="role-img" hidden>
+						<img src="img/hanzo.png" alt="" />
+					</div>
+					<div id="support-image" class="role-img" hidden>
+						<img src="img/Moira_portrait0.webp" alt="" />
+					</div>
+				</div>
+				<div id="role-desc">
+					<div id="tank-desc" class="role-desc">
+						<p class="text-display2">
+							Tank heroes soak up damage and shatter
+							fortified positions, like closely grouped
+							enemies and narrow chokepoints. If you’re a
+							tank, you lead the charge.
+						</p>
+					</div>
+					<div id="dps-desc" class="role-desc" hidden>
+						<p class="text-display2">
+							Damage heroes seek out, engage, and dominate
+							the enemy with wide-ranging abilities and play
+							styles. Fearsome but fragile, these heroes
+							require backup to survive.
+						</p>
+					</div>
+					<div id="support-desc" class="role-desc" hidden>
+						<p class="text-display2">
+							Support heroes empower their allies by
+							healing, shielding, boosting damage, and
+							disabling foes. As a support, you're the
+							backbone of your team's survival.
+						</p>
+					</div>
+				</div>
+			</section>
+			<!-- SECTION4 // NEWS -->
+			<!-- <section id="section4">
+				<div class="news-box">
+					<img
+						class="news-img"
+						src="img/news1.png"
+						alt="news1"
+					/>
+					<div class="news-text">
+						<p class="news-desc">
+							Overwatch 2 developer blog: Season 1 updates
+							with new executive producer, Jared Neuss
+						</p>
+						<p class="news-date">Nov 17</p>
+					</div>
+				</div>
+			</section> -->
+		</div>
+		<!-- #endregion CONTENT-->
+
+		<!-- #region FOOTER-->
+		<footer id="footer">
+			<h2>STAY CONNECTED</h2>
+			<div class="socialmedia">
+				<i class="fa-brands fa-instagram"></i>
+				<i class="fa-brands fa-facebook"></i>
+				<i class="fa-brands fa-twitter"></i>
+				<i class="fa-brands fa-youtube"></i>
+			</div>
+			<div class="footer-links">
+				<a href="#">CAREERS</a>
+				<a href="">ABOUT</a>
+				<a href="">SUPPORT</a>
+				<a href="">CONTACT</a>
+			</div>
+			<div class="randomstuff">
+				<p>©2022 Mhiri. ALL RIGHTS RESERVED.</p>
+				<p>
+					All trademarks referenced herein are the
+					properties of their respective owners.
+				</p>
+				<br />
+				<br />
+			</div>
+		</footer>
+
+		<!-- #endregion FOOTER-->
+		<script src="script.js" async defer></script>
+		<script
+			src="https://kit.fontawesome.com/afca7944de.js"
+			crossorigin="anonymous"
+		></script>
+	</body>
+</html>
