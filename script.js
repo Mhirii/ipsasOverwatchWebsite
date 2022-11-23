@@ -81,14 +81,14 @@ function scrollto(element) {
 
 var boxActive = false;
 
-function newsDetails(elm){
-  if (boxActive == false){
-    elm.classList.toggle("news-box")
-    elm.classList.toggle("news-box-active")
-    boxActive = true
-  }
-  else{
-    console.log('box is active')
-  }
-  boxActive = true
-}
+// function newsDetails(elm){
+//   if (boxActive == false){
+//     elm.classList.toggle("news-box")
+//     elm.classList.toggle("news-box-active")
+//     boxActive = true
+//   }
+//   else{
+//     console.log('box is active')
+//   }
+//   boxActive = true
+// }
