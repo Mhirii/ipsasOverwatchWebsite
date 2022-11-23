@@ -359,11 +359,14 @@
 			<!-- SECTION4 // NEWS -->
 			<section id="section4">
 				<h2 class="headtext-1">NEWS</h2>
-				<div id="section4-newsboxes">
+				<div
+					id="section4-newsboxes"
+					class="newsboxes-preview"
+				>
 					<div
 						class="news-box"
 						id="news1"
-						onclick="newsDetails(this);"
+						onclick="newsboxClick(this);"
 					>
 						<div class="news-img">
 							<img
@@ -384,7 +387,7 @@
 					<div
 						class="news-box"
 						id="news2"
-						onclick="newsDetails(this)"
+						onclick="newsboxClick(this)"
 					>
 						<div class="news-img">
 							<img
@@ -405,7 +408,7 @@
 					<div
 						class="news-box"
 						id="news3"
-						onclick="newsDetails(this)"
+						onclick="newsboxClick(this)"
 					>
 						<div class="news-img">
 							<img
@@ -426,7 +429,7 @@
 					<div
 						class="news-box"
 						id="news4"
-						onclick="newsDetails(this)"
+						onclick="newsboxClick(this)"
 					>
 						<div class="news-img">
 							<img
@@ -445,13 +448,12 @@
 						<div class="news-date">Oct 20</div>
 					</div>
 				</div>
-				<!-- 
-				<div id="section4-newsboxes-active" hidden>
+
+				<div id="active-news" class="hideAnimation" hidden>
 					<div
-						class="news-box-active"
-						id="news1"
-						onclick="newsDetails(this);"
-						hidden
+						class="active-news-box hidden"
+						id="news1-active"
+						onclick="newsboxClick(this)"
 					>
 						<div class="news-img">
 							<img
@@ -467,12 +469,20 @@
 							DECONSTRUCTING THE CYBER DEMON GENJI MYTHIC
 							SKIN WITH THE OVERWATCH TEAM
 						</h4>
+						<div class="news-details">
+							Lorem ipsum dolor sit amet consectetur
+							adipisicing elit. Blanditiis voluptate est ex
+							nobis reprehenderit quisquam voluptas enim,
+							expedita dolore amet animi deleniti dolorem.
+							Itaque sint maxime numquam doloribus libero
+							quis?
+						</div>
 						<div class="news-date">Nov 9</div>
 					</div>
 					<div
-						class="news-box-active"
-						id="#news2"
-						onclick="newsDetails(this)"
+						class="active-news-box hidden"
+						id="news2-active"
+						onclick="newsboxClick(this)"
 						hidden
 					>
 						<div class="news-img">
@@ -489,13 +499,20 @@
 							RAMATTRA REVEAL - OVERWATCH LEAGUE GRAND
 							FINALS
 						</h4>
+						<div class="news-details">
+							Lorem ipsum dolor sit amet consectetur
+							adipisicing elit. Blanditiis voluptate est ex
+							nobis reprehenderit quisquam voluptas enim,
+							expedita dolore amet animi deleniti dolorem.
+							Itaque sint maxime numquam doloribus libero
+							quis?
+						</div>
 						<div class="news-date">Nov 5</div>
 					</div>
 					<div
-						class="news-box-active"
-						id="#news3"
-						onclick="newsDetails(this)"
-						hidden
+						class="active-news-box hidden"
+						id="news3-active"
+						onclick="newsboxClick(this)"
 					>
 						<div class="news-img">
 							<img
@@ -511,13 +528,20 @@
 							FOLLOW US INTO THE SHADOWS—OVERWATCH 2
 							HALLOWEEN TERROR IS BACK!
 						</h4>
+						<div class="news-details">
+							Lorem ipsum dolor sit amet consectetur
+							adipisicing elit. Blanditiis voluptate est ex
+							nobis reprehenderit quisquam voluptas enim,
+							expedita dolore amet animi deleniti dolorem.
+							Itaque sint maxime numquam doloribus libero
+							quis?
+						</div>
 						<div class="news-date">Oct 24</div>
 					</div>
 					<div
-						class="news-box-active"
-						id="#news4"
-						onclick="newsDetails(this)"
-						hidden
+						class="active-news-box hidden"
+						id="news4-active"
+						onclick="newsboxClick(this)"
 					>
 						<div class="news-img">
 							<img
@@ -533,10 +557,18 @@
 							HALLOWEEN TERROR: FROM THE DESK OF THE LORD OF
 							ADLERSBRUNN
 						</h4>
+						<div class="news-details">
+							Lorem ipsum dolor sit amet consectetur
+							adipisicing elit. Blanditiis voluptate est ex
+							nobis reprehenderit quisquam voluptas enim,
+							expedita dolore amet animi deleniti dolorem.
+							Itaque sint maxime numquam doloribus libero
+							quis?
+						</div>
 						<div class="news-date">Oct 20</div>
 					</div>
 				</div>
-				-->
+
 				<button class="btn">
 					<h2>VIEW ALL</h2>
 				</button>

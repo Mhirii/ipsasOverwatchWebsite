@@ -92,3 +92,83 @@ var boxActive = false;
 //   }
 //   boxActive = true
 // }
+
+let folded = false
+
+function foldNews(){
+  let news = document.getElementById("news1")
+  news.classList.remove("news-box")
+  news.classList.add("news-box-fold")
+
+  news = document.getElementById("news2")
+  news.classList.remove("news-box")
+  news.classList.add("news-box-fold")
+
+  news = document.getElementById("news3")
+  news.classList.remove("news-box")
+  news.classList.add("news-box-fold")
+
+  news = document.getElementById("news4")
+  news.classList.remove("news-box")
+  news.classList.add("news-box-fold")
+
+  let newsbox = document.getElementById("section4-newsboxes")
+  // newsbox.classList.toggle("newsboxes-full")
+  // newsbox.classList.toggle("newsboxes-preview")
+  newsbox.style.flexDirection = 'row'
+
+  let activeNews = document.getElementById("active-news")
+  activeNews.hidden = false
+  activeNews.classList.toggle("hideAnimation")
+
+  folded = true
+  
+}
+function unfoldNews(){
+  let news
+  for (let i = 1; i < 5; i++){
+    news = document.getElementById("news"+i)
+    news.classList.add("news-box")
+    news.classList.remove("news-box-fold")
+    // console.log()
+  }
+  document.getElementById("active-news").classList.toggle("hideAnimation")
+  document.getElementById("active-news").hidden = true
+  folded = false
+}
+
+
+let currentActiveNews = "none"
+function displayNews(arg){
+  if(currentActiveNews != "none"){
+    undisplayActive()
+  }
+
+  let id = arg.concat("-active")
+  let elm = document.getElementById(id)
+  elm.classList.toggle('hidden') 
+  currentActiveNews = arg
+  console.log(currentActiveNews)
+  
+}
+
+function undisplayActive(){
+  let x = document.getElementById(currentActiveNews.concat('-active'))
+  x.classList.toggle("hidden")
+  currentActiveNews = "none"
+}
+
+function newsboxClick(elm){
+  if (!folded){
+    foldNews()
+    displayNews(elm.id)
+  }
+  else if (elm.id == currentActiveNews){
+    unfoldNews()
+    console.log("unfold")
+  }
+  else if (elm.id != currentActiveNews){
+    displayNews(elm.id)
+  }
+
+}
